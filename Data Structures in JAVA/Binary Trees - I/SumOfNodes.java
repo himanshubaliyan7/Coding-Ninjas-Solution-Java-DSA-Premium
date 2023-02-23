@@ -10,24 +10,38 @@ Sample Output :
 
 
 
-public class SumOfNodes {
+/*
 
-    /*
-     * Binary Tree Node class
-     * 
-     * class BinaryTreeNode<T> { T data; BinaryTreeNode<T> left; BinaryTreeNode<T>
-     * right;
-     * 
-     * public BinaryTreeNode(T data) { this.data = data; } }
-     */
+	Following is the Binary Tree Node class structure.
 
-    public static int sum(BinaryTreeNode<Integer> root) {
+	class BinaryTreeNode<T> {
+		T data;
+		BinaryTreeNode<T> left;
+		BinaryTreeNode<T> right;
 
-        // Write your code herei
-        if (root == null)
-            return 0;
-        int smallSum = sum(root.left) + sum(root.right);
-        return smallSum + root.data;
-    }
+		public BinaryTreeNode(T data) {
+			this.data = data;
+			this.left = null;
+			this.right = null;
+		}
+	}
+
+ */
+
+public class Solution {
+
+	public static int getSum(BinaryTreeNode<Integer> root) {
+        
+		//Your code goes here.
+        
+		if (root == null)
+			return 0;
+        
+		int smallSum = getSum(root.left) + getSum(root.right);
+        
+		return smallSum + root.data;
+        
+	}
+    
 }
 
